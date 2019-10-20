@@ -11,8 +11,9 @@ Based on this [absolutely amazing post](https://medium.com/@ravthiru/rest-servic
 git clone https://github.com/agilesolutions/keycloak.git
 docker run -d --name keycloak -p 8080:8080 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin -e KEYCLOAK_IMPORT=/tmp/realm-University.json -v /root/keycloak/scripts:/tmp/realm-University.json jboss/keycloak
 docker run -d --name keycloak -p 8080:8080 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin jboss/keycloak
-docker exec keycloak keycloak/bin/add-user-keycloak.sh -u admin -p admin
-docker restart keycloak
+WAIT AND LET KEYCLOAK BOOT UP AND CREATE ITS IN MEM DB SCHEMA
+docker logs -f keycloak
+docker exec -ti keycloak /bin/bash
 cd keycloak
 docker build -t demo .
 docker run --name demo --privileged -p 8081:8080 demo
