@@ -1,0 +1,131 @@
+{
+  "allowRemoteResourceManagement": true,
+  "policyEnforcementMode": "ENFORCING",
+  "resources": [
+    {
+      "name": "Default Resource",
+      "type": "urn:course-management:resources:default",
+      "ownerManagedAccess": false,
+      "attributes": {},
+      "_id": "9463a2e8-718a-4762-ba36-86b2987a11c0",
+      "uris": [
+        "/*"
+      ]
+    },
+    {
+      "name": "Course Resource",
+      "ownerManagedAccess": false,
+      "displayName": "Course Resource",
+      "attributes": {},
+      "_id": "81e2e1ec-9848-4ed8-bcfa-df2f203243bb",
+      "uris": [
+        "/courses/*"
+      ],
+      "scopes": [
+        {
+          "name": "view"
+        },
+        {
+          "name": "delete"
+        }
+      ]
+    }
+  ],
+  "policies": [
+    {
+      "id": "c4745626-f61c-4afc-b79b-c412b92a02cc",
+      "name": "Default Policy",
+      "description": "A policy that grants access only for users within this realm",
+      "type": "js",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "code": "// by default, grants any permission associated with this policy\n$evaluation.grant();\n"
+      }
+    },
+    {
+      "id": "eea094f4-6c31-4519-b930-4e8bcea8eab2",
+      "name": "only teacher policy",
+      "description": "applicable for all teachers",
+      "type": "role",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "roles": "[{\"id\":\"teacher\",\"required\":false}]"
+      }
+    },
+    {
+      "id": "63b59d3f-8223-4893-b00e-9838b0bcaab9",
+      "name": "only student policy",
+      "description": "only student policy",
+      "type": "role",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "roles": "[{\"id\":\"student\",\"required\":false}]"
+      }
+    },
+    {
+      "id": "c6b24892-f39b-42bb-a573-ace72b3f7274",
+      "name": "only ta policy",
+      "description": "only ta policy",
+      "type": "role",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "roles": "[{\"id\":\"ta\",\"required\":false}]"
+      }
+    },
+    {
+      "id": "1d6cadfc-2e2c-40d4-b8af-f26c98c868af",
+      "name": "Default Permission",
+      "description": "A permission that applies to the default resource type",
+      "type": "resource",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "defaultResourceType": "urn:course-management:resources:default",
+        "applyPolicies": "[\"Default Policy\"]"
+      }
+    },
+    {
+      "id": "b0c29b12-1736-4f49-b73b-8958a6f8e12c",
+      "name": "course view permission",
+      "description": "course view permission",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "resources": "[\"Course Resource\"]",
+        "scopes": "[\"view\"]",
+        "applyPolicies": "[\"only ta policy\",\"only teacher policy\",\"only student policy\"]"
+      }
+    },
+    {
+      "id": "a9be736a-4356-4e6d-8e90-fb619b3e66fd",
+      "name": "course delete permission",
+      "description": "course delete permission",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "resources": "[\"Course Resource\"]",
+        "scopes": "[\"delete\"]",
+        "applyPolicies": "[\"only teacher policy\"]"
+      }
+    }
+  ],
+  "scopes": [
+    {
+      "id": "2ccb6464-42f3-433e-8ce6-f322ef53fbe8",
+      "name": "view",
+      "displayName": "view"
+    },
+    {
+      "id": "b4e0a7e8-8126-4fc2-87a9-3be930598087",
+      "name": "delete",
+      "displayName": "delete"
+    }
+  ],
+  "decisionStrategy": "UNANIMOUS"
+}
