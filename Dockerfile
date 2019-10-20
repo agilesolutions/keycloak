@@ -1,4 +1,4 @@
-FROM base/openjdk:latest
+FROM openjdk:latest
 WORKDIR /opt/src
 COPY target/demo.jar /opt/src/demo.jar
 EXPOSE 8080
