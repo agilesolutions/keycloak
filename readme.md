@@ -2,6 +2,8 @@
 
 Based on this [absolutely amazing post](https://medium.com/@ravthiru/rest-service-protected-using-keycloak-authorization-services-a6ad2d8ecb9f)
 
+Moreover, [check how smoothly Keycloak is fitting on ISTIO](https://www.keycloak.org/2018/02/keycloak-and-istio.html)
+
 ## Setup
 
 1. goto [Play with docker](https://labs.play-with-docker.com/)
