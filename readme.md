@@ -1,5 +1,7 @@
 # Keycloak docker demo
 
+Based on this [absolutely amazing post](https://medium.com/@ravthiru/rest-service-protected-using-keycloak-authorization-services-a6ad2d8ecb9f)
+
 ## Setup
 
 1. goto [Play with docker](https://labs.play-with-docker.com/)
