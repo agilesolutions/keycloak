@@ -17,7 +17,7 @@ docker logs -f keycloak
 docker exec -ti keycloak /bin/bash
 cd keycloak
 docker build -t demo .
-docker run --name demo  --net cloud 	-p 8081:8080 demo
+docker run -d --name demo  --net cloud 	-p 8081:8080 demo
 
 ```
 [Read docker run instructions!(https://hub.docker.com/r/jboss/keycloak/)
