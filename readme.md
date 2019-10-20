@@ -43,3 +43,11 @@ Context-based access control (CBAC)
 * [About policies and authorization](https://www.keycloak.org/docs/6.0/authorization_services/#_overview)
 * [The Benefits of Migrating from ADFS to Keycloak](The Benefits of Migrating from ADFS to Okta)
 
+## some other valuable resources
+
+* [about](ttps://www.keycloak.org/about.html)
+* [quick-guide-using-keycloak-identity-access-management](https://www.comakeit.com/blog/quick-guide-using-keycloak-identity-access-management/)
+* [wikipedia](https://en.wikipedia.org/wiki/Keycloak)
+* [deep dive GREAT INTRO](https://www.thomasvitale.com/introducing-keycloak-identity-access-management/)
+* [keycloak and istio](https://www.keycloak.org/2018/02/keycloak-and-istio.html)
+* [stack overflow about istio and keycloak](https://stackoverflow.com/questions/55159887/istio-oauth2-with-keycloak)
