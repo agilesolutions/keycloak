@@ -45,7 +45,7 @@ Context-based access control (CBAC)
 
 ## some other valuable resources
 
-* [about](ttps://www.keycloak.org/about.html)
+* [about](https://www.keycloak.org/about.html)
 * [quick-guide-using-keycloak-identity-access-management](https://www.comakeit.com/blog/quick-guide-using-keycloak-identity-access-management/)
 * [wikipedia](https://en.wikipedia.org/wiki/Keycloak)
 * [deep dive GREAT INTRO](https://www.thomasvitale.com/introducing-keycloak-identity-access-management/)
