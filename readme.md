@@ -11,6 +11,8 @@ Based on this [absolutely amazing post](https://medium.com/@ravthiru/rest-servic
 docker run --name keycloak --privileged -p 8080:8080 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin jboss/keycloak
 git clone https://github.com/agilesolutions/keycloak.git
 cd keycloak
+browse to keycloak console and import this [file](./scripts/realm-University.json)
+
 docker build -t demo .
 docker run --name demo --privileged -p 8081:8080 demo
 
